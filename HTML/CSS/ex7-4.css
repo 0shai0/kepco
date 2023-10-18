@@ -1,0 +1,10 @@
+span{
+    border: solid 1px red;
+    color: red;
+    display: inline;
+}
+
+#span2{
+    display: block;
+}
+
