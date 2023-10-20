@@ -1,0 +1,65 @@
+#wrapper{
+    width: 1000px;
+    height: 700px;
+	margin: 0 auto;
+    background-color: #dddddd;
+}
+
+#header, #main, #footer{
+    text-align: center;
+}
+
+#header{
+    height: 60px;
+    width: 800px;
+    background-color: orange;
+    margin: auto;
+}
+
+#nav{
+    border: solid 1px black;
+}
+
+#main{
+    width:800px;
+    height: 580px;
+    margin: auto;
+}
+
+#section{
+    width: 580px;
+    height: 580px;
+    float: left;
+}
+
+#article{
+    border: solid 1px black;
+}
+
+#aside{
+    width: 200px;
+    height: 580px;
+    float: right;
+    background-color: aqua;
+    border: solid 1px black;
+}
+
+#footer{
+    height: 60px;
+    width: 800px;
+    background-color: orange;
+    clear: both;
+    margin: auto;
+}
+
+#main-sector{
+    background-color: red;
+    height: 290px;
+    margin: auto;
+}
+
+#under-sector{
+    background-color: grey;
+    height: 290px;
+    margin: auto;
+}
