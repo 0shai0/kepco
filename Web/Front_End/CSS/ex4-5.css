@@ -1,0 +1,11 @@
+h3{
+    text-align: center;
+}
+span{
+    text-decoration : underline;
+}
+table{
+    background-color: whitesmoke;
+    color: rgb(55, 49, 49);
+    border:solid 0.5px
+}
