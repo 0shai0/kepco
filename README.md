@@ -1,1 +1,1 @@
-# kepco
+# kepco boot camp
