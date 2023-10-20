@@ -1,0 +1,39 @@
+#for문 없이 1~9까지 출력하기 int(0~9)
+
+a=[1,2,3,4,5,6,7,8,9]
+print(a[:])
+
+i=0
+print(i+1)
+i=i+1
+print(i+1)
+i=i+1
+print(i+1)
+i=i+1
+print(i+1)
+i=i+1
+print(i+1)
+i=i+1
+print(i+1)
+i=i+1
+print(i+1)
+i=i+1
+print(i+1)
+i=i+1
+print(i+1)
+i=i+1
+
+
+i=0
+i=i+1
+print("2 X %d = %d" %(i,i*2))
+i=i+1
+
+print("2 X %d = %d" %(i,i*2))
+
+
+
+i=0
+i=i+1
+
+print(2,'x',i,'=',i*2)
