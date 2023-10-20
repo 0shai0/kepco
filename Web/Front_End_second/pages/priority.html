@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../statics/css/style.css">
+     <style>
+        p {
+            color:blue ;
+        }
+        .p {
+            color:red;
+        }
+        #p {
+            color:brown;
+        }
+        [name] {
+            color:green;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div style="border:solid 1px black">
+        <p>색상변경우선순위(동일종류의 선택자)</p>
+        <li>1 !important</li>
+        <li>2. 태그에 직접</li>
+        <li>3. 같은 css에 있을경우 맨마지막 적용</li>
+    </div>
+
+    <div style="border:solid 1px black">
+        <p>색상변경우선순위(선택자 우선순위)</p>
+        <p class="p">색상변경우선순위(선택자 우선순위)</p>
+        <p class="p" id="p">색상변경우선순위(선택자 우선순위)</p>
+        <p class="p" id="p" name="desc">색상변경우선순위(선택자 우선순위)</p>
+        <li>1. id 선택자</li>
+        <li>2. 클래스 선택자</li>
+        <li>3. 태그 선택자</li>
+    </div>
+
+</body>
+</html>
