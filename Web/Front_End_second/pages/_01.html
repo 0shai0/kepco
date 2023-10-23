@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_01</title>
+    <style>
+        h5[title] {
+            background-color: red;
+        }
+
+        h5[class~=header] {
+            background-color: yellow;
+        }
+
+        h5[class^=con] {
+            background-color: lightblue;
+        }
+
+        h5[class$=esc] {
+            background-color: orange;
+        }
+
+        h5[class*=tiv] {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h5>제목</h5>
+    <h5 title="제목1">제목1</h5>
+    <h5 class="title header">제목2</h5> <!-- header 문자열 자식포함 yellow -->
+    <h5 class="content">제목3</h5> <!-- 시작 문자열이 cont lightblue -->
+    <h5 class="desc">제목4</h5> <!-- 끝 문자열이 esc orange -->
+    <h5 class="active">제목5</h5> <!-- tiv를 포함하는 문자열 tiv aqua -->
+</body>
+</html>

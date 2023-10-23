@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_07</title>
+    <style>
+        input+span{
+            color:green;
+            display: none;
+        }
+
+        span+span{
+            color:red;
+        }
+
+        input:checked+span{
+            display: inline-block;  /*input:checked는 체크되었을 때라는 뜻*/
+        }
+
+        input:checked+span+span{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox">
+    <span>선택O</span>
+    <span>선택X</span>
+    <hr>
+    <input type="checkbox">
+    <span>선택O</span>
+    <span>선택X</span>
+</body>
+</html>
