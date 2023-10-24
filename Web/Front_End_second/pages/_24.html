@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_24</title>
+    <style>
+        div{
+            border: solid 1px red;
+        }
+
+        div:nth-of-type(1){
+            display: block; /*width와 height을 선언하지 않으면 블록이 body의 padding만큼 크기가 커짐.(다른 태그가 있다면 그 태그를 전까지 커짐)*/
+            width: 50vw;
+            height: 50px;
+        }
+
+        div:nth-of-type(2){
+            display: inline; width: 50vw; height: 50px;
+        }
+
+        div:nth-of-type(3){
+            display: inline-block; width: 50vw; height: 50px; /*width: 50vw; height: 50px;만큼의 고정 블록이 생김.
+                                                                글 길이가 늘어나도 이 블록이 커지지 않음*/
+        }
+
+        div:nth-of-type(4){
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>block 제목</div>
+    <span>block 내용</span> <hr>
+    <div>inline</div>
+    <span>inline 내용</span> <hr>
+    <div>inline-block</div>
+    <span>inline-block 내용</span> <hr>
+    <div>숨기기</div>
+    <span>숨기기 내용</span>
+</body>
+</html>

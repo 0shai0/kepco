@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_36</title>
+    <style>
+        .flex-container {
+            display: flex; height: 50px;
+            background-color: lightgrey;
+        }
+        .flex-item {
+            width: 50px; background-color: lightcyan;
+            border: 1px solid red;
+            flex-basis: 150px;
+        }
+        .flex-item:nth-child(1) { 
+            flex-basis: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </div>
+</body>
+</html>

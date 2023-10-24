@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_27_sticky</title>
+    <style>
+        body{
+                width: 500px;
+                margin: 0 auto;
+        }
+
+        p{
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        p:nth-of-type(2){
+            position: sticky; top: 30px; left: 30px;  /*sticky는 static처럼 있다가 스크롤하면 fixed처럼 고정됨*/
+            background-color: rgba(255,84,104,.3)
+        }
+    </style>
+</head>
+<body>
+    <h1>sticky 적용</h1>
+    <p>static</p>
+    <p>sticky</p>
+    <p>static</p>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

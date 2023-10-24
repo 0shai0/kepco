@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_27_fixed</title>
+    <style>
+        body{
+                width: 500px;
+                margin: 0 auto;
+        }
+
+        p{
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        p:nth-of-type(1){
+            position: absolute; /*html 문서 기준으로 떨어짐*/
+            top: 30px; left: 30px;
+            background-color: rgba(255,84,104,.3)
+        }
+
+        /*fixed와 absolute는 그다지 다르지 않다*/
+
+        p:nth-of-type(2){
+            position: fixed; top: 30px; left: 30px; /*fixed는 브라우저를 기준으로 움직여짐*/
+            background-color: rgba(255,84,104,.3)
+        }
+    </style>
+</head>
+<body>
+    <h1>fixed 적용</h1>
+    <p>absolute</p>
+    <p>fixed</p>
+    <p>static</p>
+</body>
+</html>
