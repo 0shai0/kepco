@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <h1></h1>
+    <script>
+        const agent = window.navigator.userAgent.toLowerCase();
+        let browserName;
+
+        if(agent.indexOf("edge") > -1) {
+        browserName = "MS Edge"; // 예전 MS edge
+        }
+        else if(agent.indexOf("edg/") > -1) {
+        browserName = "크로미움 기반 Edge";
+        }
+        else if(agent.indexOf("opr") > -1 && !!window.opr) {
+        browserName = "Opera";  // 오페라
+        }
+        else if(agent.indexOf("chrome") > -1 && !!window.chrome) {
+        browserName = "chrome";  // 크롬
+        }
+        else if(agent.indexOf("trident") > -1) {
+        browserName = "Internet explorer 11";
+        }
+        else if(agent.indexOf("msie") > -1) {
+        browserName = "Internet explorer"; // 11미만 버전
+        }
+        else if(agent.indexOf("firefox") > -1) {
+        browserName = "firefox"; // 파이어폭스
+        }
+        else if(agent.indexOf("safari") > -1) {
+        browserName = "safari"; // 사파리
+        }
+        else {
+        browserName = "other"; // 기타
+        }
+        document.querySelector("h1").innerText=browserName;
+
+    </script>
+</html>
