@@ -1,0 +1,28 @@
+<html>
+<head>
+    <script>
+        function execute(){
+            const callback = function() {
+            const figure = document.querySelector('.figure');
+            const label = document.querySelector('.label');
+            figure.style.backgroundColor="red";
+            figure.style.borderRadius="50px";
+            label.innerHTML="<h2>모습변경</h2>"
+            }
+            setTimeout(callback, 2000);            
+        }
+    </script>
+    <style>
+        .figure{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" onclick="execute()">실행</button>
+    <div class="label"></div>
+    <div class="figure"></div>
+</body>
+</html>

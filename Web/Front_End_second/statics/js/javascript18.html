@@ -1,0 +1,29 @@
+<html>
+<head>
+    <script>
+        function execute(){
+            let score = [
+                { 'name': 'A', 'score': 77 },
+                { 'name': 'B', 'score': 88 },
+                { 'name': 'C', 'score': 66 },
+                { 'name': 'D', 'score': 55 }
+                ];
+
+            let result = []; 
+            let person = {};
+
+            for (let i=0; i<score.length; i++){
+                if(score[i].score>60){
+                    result.push("pass");
+                } else {
+                    result.push("fail")
+                }
+            }
+            console.log(result)
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="execute()">실행</button>
+</body>
+</html>
