@@ -90,3 +90,13 @@
     font-size: 12px;
     padding-top: 13px;
 }
+
+#keyShow {
+    display: none;
+    position: absolute;
+    left: 218px;
+    top:12px;
+    font-size: 9px;
+    cursor: pointer;
+    color: grey;
+  }
