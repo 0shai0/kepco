@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script>
+        class Student{
+            constructor(name, age, enrolled, score){
+                this.name=name;
+                this.age=age;
+                this.enrolled=enrolled;
+                this.score=score;
+            };
+        };
+
+        const student=[
+            new Student("A",29,true,49),
+            new Student("B",28,false,80),
+            new Student("C",30,true,90),
+            new Student("D",40,false,66),
+            new Student("E",18,false,90)
+        ];
+
+        let result = student.filter((val,idx,arr)=>{
+            // console.log(arr);
+            return val.score>=80 && val.enrolled;
+        });
+
+        var result1= student.some((val,idx,arr)=>{
+            return val.score < 50;
+        });
+
+        const a = ()=>{
+            if(result) {
+                return "있음"
+            } else{
+                return "없음"
+            }
+        };
+
+        console.log(result1);
+
+        const fruits = ["apple", "banana", "orange"];
+        const joinFruits = fruits.join("&");
+        console.log(joinFruits);
+        console.log(joinFruits.split("&"));
+        console.log(typeof(fruits));
+        console.log(typeof(joinFruits));
+
+        const arr1 = [1,2,3,4];
+        const arr2 = [4,5,6,7];
+        const arr3 = arr1.concat(arr2)
+
+        console.log(arr1.concat(arr2));
+        console.log(arr3);
+        console.log(arr3.slice(1,3));
+    </script>
+</head>
+<body>
+</body>
+</html>

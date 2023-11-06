@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script>
+        const array=[10, 21, 23,29,33,40];
+        
+        let result = array.find((value, index, arr) => {
+            console.log(value, index, arr);
+            return value%3==0;
+        });
+
+        let result2 = array.filter((value,ind,arr)=>{
+            return value%3==0;
+        })
+
+        console.log(result);
+        console.log(result2);
+    </script>
+</head>
+<body>
+</body>
+</html>

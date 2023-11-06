@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script>
+        const house = {
+            bathroom:1,
+            room:2,
+            address:['제주도','제주시','연동'],
+            person:[
+                {name:'kim'},
+                {name:'lee'}
+            ]
+        };
+
+        for (key in house){
+            console.log(`${key}, ${house[key]}`);
+        }
+
+        delete house.bathroom;
+        house.animal = ['dog','cat'];
+        for (key in house){
+            console.log(`${key}, ${house[key]}`);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

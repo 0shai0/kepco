@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script>
+        const promise = new Promise((resolve,reject)=>{
+            console.log("작업 중.........!");
+            setTimeout(()=>{
+                resolve("작업완료")
+            },2000);
+        });
+
+        promise.then((value)=>{console.log(value)}).catch((error)=>console.log(error)).finally(()=>console.log("finished!!"));
+
+        console.log('next');
+    </script>
+</head>
+<body>
+</body>
+</html>

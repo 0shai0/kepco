@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script>
+        const animals = ['🐶', '🐱', '🐷'];
+        for(i=0; i < animals.length; i++){
+            console.log(animals[i]);
+        }
+        
+        for (key in animals){
+            console.log(animals[key]);
+        }
+
+        animals.forEach(function(animal,index,array) {
+            console.log(`${animal} | ${index} | ${array}`);
+        });
+
+        animals.forEach((animal,index,array) => {
+            console.log(`${animal} | ${index} | ${array}`);
+        });
+
+        animals.push('🐵');
+        console.log(animals);
+
+        animals[5]='🐰';
+        console.log(animals);
+    </script>
+</head>
+<body>
+</body>
+</html>

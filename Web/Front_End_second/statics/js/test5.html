@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script>
+        class User{
+            constructor(firstName, lastName, age){
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+
+                get age(){
+
+                    return this._age;
+                }
+
+                set age(value){
+                    if(value < 0){
+                        this._age = 0;
+                    }else{
+                        this._age=value;
+                    }
+                    this._age=value;
+                }
+            }
+
+            const jblee = new User('jaebeen', 'Lee', 25); //왜 마이너스가 0으로 안바뀌냐..
+            console.log(`${jblee.firstName} ${jblee.lastName} ${jblee.age}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

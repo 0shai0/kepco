@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script>
+        const formData = new FormData();
+        formData.append('a',10);
+        formData.append('b',20);
+        formData.append('c',30);
+        console.log(formData);
+
+
+        let bool = true;
+        let json = JSON.stringify(bool);
+        console.log(`${typeof(bool)} ${bool}`);
+        console.log(json);
+    </script>
+</head>
+<body>
+</body>
+</html>
