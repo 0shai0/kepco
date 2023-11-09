@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+    <script>
+        function getApple() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                resolve('🍎');
+                }, 1000)
+            });
+        }
+
+        function getKwii() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                resolve('🥝');
+                }, 4000)
+            });
+        }
+
+        function getMango() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                resolve('🥭');
+                }, 5000)
+            });
+        }
+
+        function sell() {
+            return getApple().then(apple => {
+                return getKwii().then(kiwi => {
+                    return getMango().then(mango => {
+                        return `${apple} + ${kiwi} + ${mango}`;
+                    });
+                });
+            });
+        }
+
+        async function aSell(){
+            const apple = await getApple()
+            const kiwi = await getKwii()
+            const mango = await getMango()
+            return `${apple}, ${kiwi}, ${mango}`;
+        }
+
+
+        sell().then(result=>console.log(result));
+        console.log(sell());
+
+        aSell().then(result=>console.log(result));
+        console.log(sell());
+
+
+    </script>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>

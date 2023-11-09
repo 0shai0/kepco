@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    <input type="text">inch
+    <button>계산</button>
+    <p></p>
+</body>
+<script>
+    const btn = document.querySelector('button');
+    const val = document.querySelector('input').value;
+    btn.addEventListener('click',()=>{
+        const val = document.querySelector('input').value;
+        const result = val*2.54;
+        const obj = document.querySelector('p');
+        obj.textContent = `${result}cm`;
+    })
+</script>
+</html>

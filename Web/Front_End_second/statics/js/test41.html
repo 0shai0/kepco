@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    <h3>글자 수 : 0</h3>
+    <input type="text">
+</body>
+<script>
+    const input = document.querySelector('input');
+    const h3 = document.querySelector('h3');
+    console.log(input.value);
+    input.addEventListener(
+        'keyup', ()=>{
+            const length = input.value.length;
+            h3.textContent='글자 수 : '+length
+        });
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <div id="content"></div>
+        <script>
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = callback;
+            xhr.open("get","http://ggoreb.com/ajax/html/data1.jsp"); // html page <form> <input>value</input> </from>
+            xhr.send(null);
+            function callback(){
+                if(xhr.readyState==4){
+                    if(xhr.status==200){
+                        let result = xhr.response;
+                        console.log(result);
+                        document.getElementById("content").innerHTML += result;
+                        document.querySelector("#content").innerHTML += result;
+                    }
+                }
+            }
+        </script>
+</body>
+</html>

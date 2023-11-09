@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            align-content: center;
+        }
+
+        table{
+            width: 50vw;
+            height: 50vh;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        td{border: solid 1px black;}
+        tr:first-child td { border-top: 3px solid black; }
+        tr:last-child td { border-bottom: 3px solid black; }
+        td:first-child { border-left: 3px solid black; }
+        td:last-child { border-right: 3px solid black; }
+    </style>
+</head>
+<body>
+    <div id="bingo"></div>
+</body>
+<script>
+    const size = 3;
+    const number = new Array();
+    for(let i = 1; i<=size*size; i++){
+        number.push(i);
+        number.sort(()=>Math.random-0.5)
+    }
+
+    const table = document.createElement('table');
+    let tr;
+    for(let i = 0; i<number.length; i++){
+        if(i%3==0){
+            tr= document.createElement('tr')
+        }
+        num = number[i];
+        const td = document.createElement('td');
+        const val = document.createTextNode(num);
+        tr.appendChild(td);
+        td.appendChild(val);
+        table.appendChild(tr);
+    }
+
+    const div = document.querySelector("#bingo");
+    div.appendChild(table);
+
+    const elem = document.querySelectorAll("td");
+    elem.forEach(e=>e.addEventListener('click',()=>e.style.backgroundColor='lightgray'));
+    // 회색을 흰색으로
+    
+</script>
+</html>

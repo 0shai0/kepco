@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    <select>
+        <option>떡볶이</option>
+        <option>순대</option>
+        <option>오뎅</option>
+        <option>튀김</option>
+    </select>
+    <p>선택 : </p>
+</body>
+<script>
+    const select = document.querySelector('select');
+    
+    select.addEventListener('change', ()=>{
+        // const option = document.querySelector('option');
+        const options = select.options;
+        const idx = options.selectedIndex;
+        options[idx].textContent;
+        document.querySelector('p').textContent = `선택 : ${options[idx].textContent}`;
+    })
+</script>
+</html>

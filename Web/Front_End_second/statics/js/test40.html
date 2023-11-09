@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+</head>
+<body>
+    <div class="container"></div>
+        <div class="d-grid">
+            <button type="button" class="btn btn primary btn-block">
+                이미지 불러오기
+            </button><br><br>
+            <img style="border: solid 1px black; width: 100px; height:100px;">
+        </div>
+        <div class="target"></div>
+</body>
+<script>
+    document.querySelector('button').addEventListener("click",
+    ()=> {
+        obj = document.querySelector("img");
+        obj.setAttribute('src', 'http://ggoreb.com/images/choco/1.jpg');
+    })
+</script>
+</html>
