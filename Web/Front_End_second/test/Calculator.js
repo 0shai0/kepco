@@ -1,36 +1,45 @@
 const result = document.getElementById("result");
 const num = document.querySelectorAll(".num");
+const zero = document.getElementById("zero");
 const calculate = document.querySelectorAll(".calculate");
 const reset = document.getElementById("reset");
 const equal = document.getElementById("equal");
 
 
 
-// 숫자 클릭 시 result에 값이 들어가는 코드, 값이 없을 때 0을 누를 시 숫자가 추가되지 않는 코드,
-// 기본값 0으로 하고 숫자 누르면 0 사라지고 누른 숫자 나오기
+// 숫자 클릭 시 result에 숫자가 들어가는 코드, result 값이 없을 때 0을 누를 시 0이 추가되지 않는 코드,
 
 for (let i = 0; i < num.length; i++) {
     num[i].addEventListener("click", (e) => {
         const clickNumber = e.target.innerHTML;
-        result.textContent += clickNumber;
+        if (result.textContent === "" && clickNumber === "0"){
+
+        } else {
+            result.textContent += clickNumber;
+        } 
     });
 }
 
 
 
-// 사칙연산 클릭 시 result에 값이 들어가는 코드, 연속으로 사칙연산 누를 시 나중에 누른 것이 적용
-// 숫자를 아무것도 누르지 않고 누를 시 적용되지 않게 하기
+// calculate 클릭 시 result에 값이 들어가는 코드, 연속으로 calculate를 누를 시 처음에 누른 것만 적용
+// 숫자를 아무것도 누르지 않고 calculate 누를 시 적용되지 않는 코드
 
 for (let i = 0; i < calculate.length; i++) {
     calculate[i].addEventListener("click", (e) => {
         const clickCalculate = e.target.innerHTML;
-        result.textContent += clickCalculate;
-      });
+        if (result.textContent === "" || result.textContent.endsWith("+") || result.textContent.endsWith("-")
+            || result.textContent.endsWith("x") || result.textContent.endsWith("/")) {
+            
+        } else {
+            result.textContent += clickCalculate;
+        }
+    });
 }
 
 
 
-// C를 누를 시 result에 있던 것이 없어지는 코드
+// C를 누를 시 result가 공백이 되는 코드
 
 reset.addEventListener("click", (e) => {
     result.textContent = "";
@@ -38,75 +47,49 @@ reset.addEventListener("click", (e) => {
 
 
 
-// +를 누를 때 더하기 되기
+// "=" 클릭 시 result에 연산자가 포함되어 있고 연산자 양 쪽에 숫자가 있을 경우 계산하는 코드
 
 equal.addEventListener("click", (e) => {
-    const plus = result.textContent;
-    const plusIndex = plus.indexOf("+");
-    if (plusIndex !== -1 && plusIndex < plus.length - 1) {
-        // '+'가 있고 오른쪽에 숫자가 있는 경우
-        const leftplus = plus.substring(0, plusIndex);
-        const rightplus = plus.substring(plusIndex + 1);
-        const finalResult = parseInt(leftplus, 10) + parseInt(rightplus, 10);
+    const outcome = result.textContent;
+
+    // 각 연산자를 개별적으로 찾기 위해 연산자에 변수 선언
+    const plusIdx = outcome.indexOf("+");
+    const minusIdx = outcome.indexOf("-");
+    const multiplyIdx = outcome.indexOf("x");
+    const divisionIdx = outcome.indexOf("/");
+
+    // 연산자가 있는지 확인하는 변수 선언
+    const check = plusIdx !== -1 || minusIdx !== -1 || multiplyIdx !== -1 || divisionIdx !== -1;
+
+    // 연산자가 있으면서 연산자가 처음에 있지 않을 시
+    if (check && check > 0 && check < outcome.length-1) {
+        let leftOutcome, rightOutcome, finalResult;
+
+        // 연산자에 따라 해당 연산 수행
+        if (plusIdx !== -1) {
+            leftOutcome = outcome.substring(0, plusIdx);
+            rightOutcome = outcome.substring(plusIdx + 1);
+            finalResult = parseFloat(leftOutcome) + parseFloat(rightOutcome);
+        } else if (minusIdx !== -1) {
+            leftOutcome = outcome.substring(0, minusIdx);
+            rightOutcome = outcome.substring(minusIdx + 1);
+            finalResult = parseFloat(leftOutcome) - parseFloat(rightOutcome);
+        } else if (multiplyIdx !== -1) {
+            leftOutcome = outcome.substring(0, multiplyIdx);
+            rightOutcome = outcome.substring(multiplyIdx + 1);
+            finalResult = parseFloat(leftOutcome) * parseFloat(rightOutcome);
+        } else if (divisionIdx !== -1) {
+            leftOutcome = outcome.substring(0, divisionIdx);
+            rightOutcome = outcome.substring(divisionIdx + 1);
+            finalResult = parseFloat(leftOutcome) / parseFloat(rightOutcome);
+        }
+
         result.textContent = finalResult;
+
+    } else if (check === 0) {
+        result.textContent = outcome.substring(1);
     } else {
-        // '+'가 없거나 오른쪽에 숫자가 없는 경우
-        result.textContent = parseInt(plus, 10);
+        result.textContent = outcome.slice(0,- 1);
     }
 });
 
-
-// -를 누를 때 빼기 되기
-
-equal.addEventListener("click", (e) => {
-    const minus = result.textContent;
-    const minusIndex = minus.indexOf("-");
-    if (minusIndex !== -1 && minusIndex < minus.length - 1) {
-        // '-'가 있고 오른쪽에 숫자가 있는 경우
-        const leftMinus = minus.substring(0, minusIndex);
-        const rightMinus = minus.substring(minusIndex + 1);
-        const finalResult = parseInt(leftMinus, 10) - parseInt(rightMinus, 10);
-        result.textContent = finalResult;
-    } else {
-        // '-'가 없거나 오른쪽에 숫자가 없는 경우
-        result.textContent = parseInt(minus, 10);
-    }
-});
-
-
-
-// %를 누를 때 나누기 되기
-
-equal.addEventListener("click", (e) => {
-    const divide = result.textContent;
-    const divideIndex = divide.indexOf("%");
-    if (divideIndex !== -1 && divideIndex < divide.length - 1) {
-        // '-'가 있고 오른쪽에 숫자가 있는 경우
-        const leftdivide = divide.substring(0, divideIndex);
-        const rightdivide = divide.substring(divideIndex + 1);
-        const finalResult = parseInt(leftdivide, 10) % parseInt(rightdivide, 10);
-        result.textContent = finalResult;
-    } else {
-        // '-'가 없거나 오른쪽에 숫자가 없는 경우
-        result.textContent = parseInt(divide, 10);
-    }
-});
-
-
-
-// x를 누를 때 곱하기 되기
-
-equal.addEventListener("click", (e) => {
-    const multiply = result.textContent;
-    const minusIndex = multiply.indexOf("x");
-    if (multiplyIndex !== -1 && multiplyIndex < multiply.length - 1) {
-        // '-'가 있고 오른쪽에 숫자가 있는 경우
-        const leftmultiply = multiply.substring(0, multiplyIndex);
-        const rightmultiply = multiply.substring(multiplyIndex + 1);
-        const finalResult = parseInt(leftmultiply, 10) * parseInt(rightmultiply, 10);
-        result.textContent = finalResult;
-    } else {
-        // '-'가 없거나 오른쪽에 숫자가 없는 경우
-        result.textContent = parseInt(multiply, 10);
-    }
-});
