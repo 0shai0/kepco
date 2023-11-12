@@ -1,0 +1,31 @@
+.wrapper {
+    display: grid; grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    }
+    div > div {
+    background-color: rgb(207, 232, 220);
+    border: 2px solid rgb(79, 185, 227);
+    padding: 10px; border-radius: 5px;
+    }
+    div > p {
+    background-color: rgb(207, 232, 220);
+    border: 2px solid rgb(79, 185, 227);
+    padding: 10px; border-radius: 5px;
+    }
+    #zero {
+    grid-column: 1 / 4;
+    grid-row: 6;
+    }
+    #equal{
+    grid-column: 4;
+    grid-row: 4/7;
+    }
+    #reset{
+    grid-column: 4;
+    grid-row: 3/4;
+    }
+    #result{
+        grid-column: 1/5;
+        grid-row: 1;
+    }
