@@ -1,0 +1,19 @@
+#projector {
+    background-color: rgb(207, 232, 220);
+    border: 2px solid rgb(79, 185, 227);
+    padding: 10px; border-radius: 5px;
+    width: 30%;
+    text-align: center;
+    margin: 30px auto;
+}
+div > div {
+    text-align: center;
+    background-color: rgb(207, 232, 220);
+    border: 2px solid rgb(79, 185, 227);
+    padding: 10px; border-radius: 5px;
+}
+.wrapper {
+    display: grid; grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+}
