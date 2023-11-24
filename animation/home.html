@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+    <script defer src="./static/js/transanimation.js"></script>
+    <link rel="stylesheet" href="./static/css/loading.css">
+    <link rel="stylesheet" href="./static/css/transanimation.css">
+</head>
+<body>
+
+
+  <!-- 로딩 애니매이션 -->
+
+  <div id="loading">
+    <div class="divider" aria-hidden="true"></div>
+    <p class="loading-text" aria-label="Loading">
+      <span class="letter" aria-hidden="true">L</span>
+      <span class="letter" aria-hidden="true">o</span>
+      <span class="letter" aria-hidden="true">a</span>
+      <span class="letter" aria-hidden="true">d</span>
+      <span class="letter" aria-hidden="true">i</span>
+      <span class="letter" aria-hidden="true">n</span>
+      <span class="letter" aria-hidden="true">g</span>
+    </p>
+  </div>
+
+    <!-- 로딩 애니매이션 -->
+
+
+    <!-- 홈페이지 -->
+
+
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+  
+  <div class="container" ng-class="{'no-scroll': selected.length}" ng-app="app" ng-controller="mainCtrl">
+    
+    <div class="page">
+      <div class="grid">
+        <div class="grid-item" ng-repeat="item in boxes">
+          <box class="box" item="item" on-select="selectBox" ng-class="{'selected': selected[0].item.name == item.name}"></box>
+        </div>
+      </div>
+    </div>
+    <div class="fullscreen-background top-up" ng-show="selected.length" ng-style="{'background-image': 'url(' + selected[0].item.image + ')'}"></div>
+    <div class="scroller" ng-show="selected.length">
+      <a class="close-button" ng-click="clearSelection()">
+        <i class="material-icons">close</i>
+      </a>
+      <h1>{{selected[0].item.name}}</h1>
+      <div big-box ng-repeat="item in selected" class="box on-top" position="item.position" selected="item.item">
+         DB 사진 적용 
+        <img ng-src="{{item.item.image}}" alt=""/>
+        <div class="content">
+           여기 아래는 DB로 적용되게 하기 
+          <h2>Lorem ipsum dolor</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime laborum perferendis, ullam minus. Illo ad aliquid ab magni, enim nesciunt at consequuntur dolores explicabo nisi. Dolor, reiciendis suscipit alias nemo.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consequatur, sit saepe reprehenderit nisi dolorem, voluptates amet quos ab assumenda non id accusamus, dicta soluta laboriosam voluptas fuga sint deleniti. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam officiis minus tenetur ex molestias qui possimus sit facilis dolorum suscipit. Cumque, aperiam inventore nobis? Veniam voluptatibus sapiente ea, voluptate dolores?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur dicta ducimus ratione reiciendis officia odit omnis distinctio, eveniet et modi fuga nisi voluptatem nihil aliquam ex pariatur possimus repudiandae vero?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, quos ducimus nobis. Necessitatibus provident impedit, neque quia dolores? Quas, architecto id. Iure distinctio, illum eaque at quia assumenda modi saepe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero soluta quisquam autem quasi ut ex ab modi. Sit soluta dicta incidunt quaerat tenetur fugiat, natus perspiciatis illo. Totam, quo, minus.</p>
+          <br><hr><br><br>
+          <div class="form comment-form">
+            <img class="card__image" src="https://picsum.photos/id/454/200/200" alt="A female hand holding a camera"/>
+            <textarea placeholder="내용을 입력하세요"></textarea>
+          </div>
+          <button type="button" class="submit">등록하기</button>
+
+
+          <!-- 댓글 창
+          <div class="comment">
+            <ul class="comment_list">
+              <li id="comment_list_span" class="comment_list_p"></li>
+            </ul>
+          </div> -->
+
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+</body>
+</html>
