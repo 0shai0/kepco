@@ -1,0 +1,23 @@
+body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+img{
+    width: 600px;
+}
+
+#sacrifice3{
+    position: relative;
+    bottom: 670px;
+    height: 700px;
+    width: 1200px;
+}
+
+.hidden {
+    display: none;
+}
