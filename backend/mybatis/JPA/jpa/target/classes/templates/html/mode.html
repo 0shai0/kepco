@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문</title>
+</head>
+<body>
+    <span th:if="${mode} != null" th:text="${mode.user}"></span>
+    <span th:unless="${mode} != null">조회할 수 없는 데이터입니다</span>
+
+    <span th:if="${mode} != null" th:switch="${mode.seq}">
+        <span th:case="1">A</span>
+        <span th:case="2">B</span>
+        <span th:case="3">C</span>
+    </span>
+    <span th:unless="${mode} != null"></span>
+</body>
+</html>
